@@ -1,0 +1,57 @@
+<div id="bgx">
+    <div id="bg-contx">
+        <div id="kvk"></div>
+    </div>
+</div>
+<div class="center-1000x padten overhide">
+    <div class="wide glassif radfive ">
+        <div id="searchbo">
+            <button onclick="link('/')"><i class="fa fa-home"></i></button>
+            <button onclick="link('/discography')"><i class="fa fa-plus-circle"></i></button>
+        </div>
+        <div id="songi" style="background-image:url('{{song.cover_art}}')">
+            <div>
+                {{#preview song.preview}}{{/preview}}
+            </div>
+        </div>
+        {{#isnot song.preview ""}}
+        <span class="dirx" name="direction"><i class="fa fa-chevron-up"></i> Play preview</span>
+        {{/isnot}}
+        <h1 id="songt">{{page.title}}</h1>
+        <span class="dirx" name="direction">Choose music service <i class="fa fa-chevron-down"></i></span>
+        {{#is links.length 0}}
+        {{#isnot song.lyrics ""}}
+        <button onclick="tab('lyrics')" class="panP linkxx font-14 padfifteen rad-3 silveru-bg light-black wide text-center thick" >View Official Lyrics</button>
+        {{/isnot}}
+        {{#is song.lyrics ""}}
+        <br>
+        <p class="panP slim text-center padten grey">Sorry! No links added yet. Please check back later.</p>
+        <br><br>
+        {{/is}}
+        {{/is}}
+        {{#isnot links.length 0}}
+        {{#each links}}
+        <a rel="nofollow" target="_blank" class="panP linkxx font-14 padfifteen rad-3 silveru-bg light-black wide text-center thick" href="/link/{{id}}/{{../song.id}}">{{phra}}</a>
+        {{/each}}
+        {{#isnot song.lyrics ""}}
+        <button onclick="tab('lyrics')" class="panP linkxx font-14 padfifteen rad-3 silveru-bg light-black wide text-center thick" >View Official Lyrics</button>
+        {{/isnot}}
+        {{/isnot}}
+        
+    </div>
+    <br>
+    <p class="panP grey wide text-center slimy font12 overhide">By using this service, you agree to the use of cookies.</p>
+</div>
+{{#isnot song.lyrics ""}}
+<div id="tab-lyrics" class="tab silveri-bg">
+	<div class="headerx titi light-b white-bg">
+		<p class="dark-grey">{{song.title}} (Official Lyrics)</p>
+		<button onclick="cli()" class="dark-grey no-bg"><i class="fa fa-close"></i></button>
+	</div>
+	<div class="contx padten">
+		<div class="white-bg black-outx padten">
+			<p class="panP wide light-black overhide">{{#entities song.lyrics}}{{/entities}}</p>
+		</div>
+	</div>
+</div>
+{{/isnot}}

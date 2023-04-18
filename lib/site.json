@@ -1,0 +1,49 @@
+{
+	"domain":"alshintk.online",
+	"brand":"Alshin The Kid",
+	"brandABBR":"ATK",
+	"brandLink":"/",
+	"mode":"prod",
+	"prod":{
+		"sql":{
+			"host":"us-cdbr-east-05.cleardb.net",
+			"user":"b2edd02f5711dc",
+			"pass":"fd136aa6",
+			"db":"heroku_e178423b7848e26"
+		},
+		"addr":"https://alshintk.online"
+	},
+	"dev":{
+		"sql":{
+			"host":"localhost",
+			"user":"root",
+			"pass":"",
+			"db":"alshin"
+		},
+		"addr":"http://localhost:3000"
+	},
+	"slogan":"Alshin The kid - Artist and Producer | Official Website",
+	"parseLimit":10,
+	"logo":"/img/logo.png",
+	"image":"/img/pic.png",
+	"fetchLimit":10,
+	"fetchMax":1000,
+	"icon":"/icon.png",
+	"favicon":"/favicon.ico",
+	"privilege":"bigben",
+	"appleFavicon":"/favicon.ico",
+	"themeColor":"#101010",
+	"keywords":"artist, producer, alshin the kid",
+	"phpServer":"https://salty-bastion-91179.herokuapp.com/",
+	"phpToken":"djhhgf8uhfruerf8yeruee90uefherfcehew8jd9e8huwf89cehwvjvbbibeoibrieihwigcheuvvv9rh9",
+	"email":"alshinthekid@gmail.com",
+	"description":"Alshin The Kid's official website. Artist and Producer",
+	"socketToken":"7327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e7354",
+	"maintenance":false,
+	"smtp":{
+		"host":"in-v3.mailjet.com",
+		"user":"ba2c8736a0fbb932ba452cefe3a94e9f",
+		"port":587,
+		"pass":"b1400e0f86a678e98ebacb8dfb01c476"
+	}
+}

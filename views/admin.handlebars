@@ -1,0 +1,220 @@
+{{#section 'head'}}
+	<script>
+		var defaultCover = "{{site.image}}";
+		var adminUN = "{{username}}";
+		var plim = {{site.parseLimit}};
+	</script>
+{{/section}}
+
+<div id="container">
+		<div id="sidePane">
+		</div>
+		<div id="side" class="titi">
+			<div id="sideTop">
+				<div id="userDet">
+					<span ondblclick="load_admin()" class="cursor">{{username}}</span> <button onclick="logout()"><i class="fa fa-power-off"></i></button><br>
+				</div>
+				<a href="/" id="logo">
+					<img height="50px" width="auto" src="{{site.logo}}">
+				</a>
+				<button onclick="menu()" id="sideClose"><i class="fa fa-arrow-left"></i></button>
+			</div>
+			<div id="sideLinks" class="">
+				<div class="linkGroup">
+					<div onclick="dbtab(1)" class="link"><i class="linkIcon fa fa-dashboard"></i><span class="linkText">Dashboard</span><span class="linkBadge"><span id="" class="badge"></span></span></div>
+					<div onclick="dbtab(2)" class="link"><i class="linkIcon fa fa-music"></i><span class="linkText">Discography</span><span class="linkBadge"><span id="" class="badge"></span></span></div>
+					<div onclick="dbtab(3)" class="link"><i class="linkIcon fa fa-th-large"></i><span class="linkText">Stores</span><span class="linkBadge"><span class="badge"></span></span></div>
+					<div onclick="dbtab(4)" class="link"><i class="linkIcon fa fa-comments"></i><span class="linkText">Socials</span><span class="linkBadge"><span id="" class="badge"></span></span></div>
+					<div onclick="dbtab(5)" class="link"><i class="linkIcon fa fa-cog"></i><span class="linkText">Settings</span><span class="linkBadge"><span class="badge"></span></span></div>
+					<div onclick="downnews()" class="link"><i class="linkIcon fa fa-envelope"></i><span class="linkText">Newsletters</span><span class="linkBadge"><span class="badge"></span></span></div>
+				
+				</div>
+				<div class="linkGroup">
+					<div onclick="downloadLogs()" class="link"><i class="linkIcon fa fa-clock-o"></i><span class="linkText">Download Logs</span><span class="linkBadge"><span id="" class="badge"></span></span></div>
+					<div onclick="addLog()" class="link"><i class="linkIcon fa fa-plus-circle"></i><span class="linkText">Add Log</span><span class="linkBadge"><span id="" class="badge"></span></span></div>
+					<div onclick="deleteLogs()" class="link"><i class="linkIcon fa fa-trash"></i><span class="linkText">Delete Site Logs</span><span class="linkBadge"><span id="" class="badge"></span></span></div>
+					<div onclick="sql()" class="link"><i class="linkIcon fa fa-server"></i><span class="linkText">Query DB</span><span class="linkBadge"><span id="" class="badge"></span></span></div>
+				</div>
+			</div>
+		</div>
+		<div id="mainPane">
+			<header id="header">
+				<div id="header_side">
+					<button onclick="menu()" ><i class="fa fa-navicon"></i></button>
+				</div>
+				<div id="header_main" class="mont">
+					<button id="dbb-1" onclick="dbtab(1)" class="tabBtn hactive">Dashboard</button>
+					<button id="dbb-2" onclick="dbtab(2)" class="tabBtn ">Discography</button>
+					<button id="dbb-3" onclick="dbtab(3)" class="tabBtn">Stores</button>
+					<button id="dbb-4" onclick="dbtab(4)" class="tabBtn">Socials</button>
+					<button id="dbb-5" onclick="dbtab(5)" class="tabBtn">Settings</button>
+				</div>
+			</header>
+			
+			<!--db tabs-->
+			<div id="dbtab-1" class="dbtab dactive">
+				 <div class="padten stats">
+				 	<div class="stat titi">
+				 		<h5 class="dark-grey-bg white">Today's Visits</h5>
+				 		<p id="today" class="light-black"><i class="fa fa-spinner fa-pulse"></i></p>
+				 	</div>
+				 	<div class="stat titi">
+				 		<h5 class="dark-grey-bg white">Month's Visits</h5>
+				 		<p id="month" class="light-black"><i class="fa fa-spinner fa-pulse"></i></p>
+				 	</div>
+				 	<div class="stat titi">
+				 		<h5 class="dark-grey-bg white">Total Visits</h5>
+				 		<p id="visits" class="light-black"><i class="fa fa-spinner fa-pulse"></i></p>
+				 	</div>
+				 	<div class="stat titi">
+				 		<h5 class="dark-grey-bg white">Mode</h5>
+				 		<p class="light-black">{{site.mode}}</p>
+				 	</div>
+				 	<div class="stat titi">
+				 		<h5 class="dark-grey-bg white">Connected Sockets</h5>
+				 		<p id="socks" class="light-black"><i class="fa fa-spinner fa-pulse"></i></p>
+				 	</div>
+				 	<div class="stat titi">
+				 		<h5 class="dark-grey-bg white">Projects</h5>
+				 		<p id="songlen" class="light-black"><i class="fa fa-spinner fa-pulse"></i></p>
+				 	</div>
+				 	<div class="stat titi">
+				 		<h5 class="dark-grey-bg white">Total Links</h5>
+				 		<p id="linklen" class="light-black"><i class="fa fa-spinner fa-pulse"></i></p>
+				 	</div>
+				 	<div class="stat titi">
+				 		<h5 class="dark-grey-bg white">Emails</h5>
+				 		<p id="emaillen" class="light-black"><i class="fa fa-spinner fa-pulse"></i></p>
+				 	</div>
+				 	<div class="stat titi">
+				 		<h5 class="dark-grey-bg white">Admin Clearance</h5>
+					 	<p id="dclen" class="light-black">Lv. {{page.lev}}</p>
+				 	</div>
+				 </div>
+			</div>
+			
+			
+			<div id="dbtab-2" class="dbtab">
+				 <h3 class="heading dark-grey marten">Discography <button onclick="addSong()" class="silver-bg black-out dark-grey radfive no-border"><i class="fa fa-plus"></i></button></h3>
+				 <div id="songs" class="wide padten">
+					 <p class="panP grey padtwenty overhide text-center"><i class="fa fa-pulse fa-spinner"></i> Loading songs...</p>
+				 </div>
+			</div>
+
+			<div id="dbtab-3" class="dbtab">
+				 <h3 class="heading dark-grey marten">Stores <button onclick="addStore()" class="silver-bg black-out dark-grey radfive no-border"><i class="fa fa-plus"></i></button></h3>
+				 <div id="stores" class="wide padten">
+					 <p class="panP grey padtwenty overhide text-center"><i class="fa fa-pulse fa-spinner"></i> Loading stores...</p>
+				 </div>
+			</div>
+
+			<div id="dbtab-4" class="dbtab">
+				<h3 class="heading dark-grey marten">Socials <button onclick="addSocial()" class="silver-bg black-out dark-grey radfive no-border"><i class="fa fa-plus"></i></button></h3>
+				 <div id="socials" class="wide padten">
+					 <p class="panP grey padtwenty overhide text-center"><i class="fa fa-pulse fa-spinner"></i> Loading socials...</p>
+				 </div>
+			</div>
+
+			<div id="dbtab-5" class="dbtab">
+				 <h3 class="heading dark-grey marten">Settings</h3>
+				 <div id="settings" class="wide padten">
+					 <button onclick="updatePass('{{username}}')" class="panButton dark-grey-bg white black-out radfive overhide">Change Password</button>
+				 </div>
+			</div>
+			
+			<!--end of dbtabs -->
+		</div>
+	</div>
+	
+
+
+
+
+
+<div id="tab-add-song" class="tab silveri-bg">
+	<div class="headerx titi light-b white-bg">
+		<p class="dark-grey">Add New Project</p>
+		<button onclick="cli()" class="dark-grey no-bg"><i class="fa fa-close"></i></button>
+	</div>
+	<div class="contx padten">
+		<div class="white-bg black-outx padten">
+			<p class="panP grey"><small>fields with <span class="red">*</span> are required.</small></p>
+
+			<div class="inp martwenty no-side-margin">
+			<p class="panP no-margin no-padding titi"><span class="thick light-black">UPC </span></p>
+			<input name="UPC" id="as-upc" maxlength="20" type="text" class="wide light-border padten font14 radfive white-bg slim light-black">
+			</div>
+
+			<div class="inp martwenty no-side-margin">
+			<p class="panP no-margin no-padding titi"><span class="thick light-black">ISRC </span></p>
+			<input name="ISRC" id="as-isr" maxlength="20" type="text" class="wide light-border padten font14 radfive white-bg slim light-black">
+			</div>
+
+			<div class="inp martwenty no-side-margin">
+			<p class="panP no-margin no-padding titi"><span class="thick light-black">Title <span class="red">*</span></span><br>
+			<small class="silver grey">Max length is 100.</small></p>
+			<input name="title" id="as-tit" maxlength="100" type="text" class="wide light-border padten font14 radfive white-bg slim light-black">
+			</div>
+
+			<div class="inp martwenty no-side-margin">
+			<p class="panP no-margin no-padding titi"><span class="thick light-black">Main Artist <span class="red">*</span></span></p>
+			<input name="artist" id="as-mar" value="{{site.brand}}" maxlength="20" type="text" class="wide light-border padten font14 radfive white-bg slim light-black">
+			</div>
+
+			<div class="inp martwenty no-side-margin">
+			<p class="panP no-margin no-padding titi"><span class="thick light-black">Features </span><br>
+			<small class="silver grey">If multiple, separate each with a comma (,)</small></p>
+			<input name="features" id="as-fea" maxlength="100" type="text" class="wide light-border padten font14 radfive white-bg slim light-black">
+			</div>
+
+			<div class="inp martwenty no-side-margin">
+			<p class="panP no-margin no-padding titi"><span class="thick light-black">Release Date and Time <span class="red">*</span></span><br>
+			<small class="silver grey">Time is on a 24 hours clock. Format: DD-MM-YYYY HH:MM</small></p>
+			<input name="release date and time" id="as-rdt" maxlength="100" type="text" class="wide light-border padten font14 radfive white-bg slim light-black">
+			</div>
+
+			<div class="inp martwenty no-side-margin">
+			<p class="panP no-margin no-padding titi"><span class="thick light-black">Genre(s) <span class="red">*</span></span><br>
+			<small class="silver grey">If multiple, separate each with a comma (,). Maximum of two genres(main, then sub)</small></p>
+			<input name="features" id="as-gen" maxlength="100" type="text" class="wide light-border padten font14 radfive white-bg slim light-black">
+			</div>
+
+			<div class="inp martwenty no-side-margin">
+			<p class="panP no-margin no-padding titi"><span class="thick light-black">Tags/Mood/Feels <span class="red">*</span></span><br>
+			<small class="silver grey">If multiple, separate each with a comma (,). Maximum of three</small></p>
+			<input name="features" id="as-tag" maxlength="100" type="text" class="wide light-border padten font14 radfive white-bg slim light-black">
+			</div>
+
+			<div class="inp martwenty no-side-margin">
+			<p class="panP no-margin no-padding titi"><span class="thick light-black">Uploads <span class="red">*(cover art)</span></span><br>
+			<small class="silver grey">Three uploads in this order: cover art; audio preview; lyrics txt file.</small></p>
+			<div id="as-ups" class="add-images horizon">
+				<div id="as-cov" data-file="" data-type="image" data-accept="image/jpeg, image/png" data-max="2000000" onclick="addSongFile(this)" class="add-image">
+					<img>
+					<span><i class="fa fa-upload"></i></span>
+				</div>
+				<div id="as-pre" data-file="" data-type="audio" data-accept="audio/*" data-max="100000000" onclick="addSongFile(this)" class="add-image">
+					<img>
+					<span><i class="fa fa-upload"></i></span>
+				</div>
+				<div id="as-lyr" data-file="" data-type="plain" data-accept="plain/text" data-max="1000000" onclick="addSongFile(this)" class="add-image">
+					<img>
+					<span><i class="fa fa-upload"></i></span>
+				</div>
+			</div>
+			</div>
+
+			<div class="inp martwenty no-side-margin">
+			<p class="panP no-margin no-padding titi"><span class="thick light-black">Status<span class="red">*</span></span></p>
+			<select name="status" id="as-sta"  class="wide light-border padten font14 radfive white-bg slim light-black">
+				<option value="">--Select status--</option>
+				<option value="private">Private</option>
+				<option value="public">Public</option>
+			</select>
+			</div>
+
+			<button id="apxx" onclick="addProject()" class="panButton light-grey-bg light-black black-out radfive">Add Project</button>
+		
+		</div>
+	</div>
+</div>

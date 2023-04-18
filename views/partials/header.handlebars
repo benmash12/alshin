@@ -1,0 +1,30 @@
+<noscript><span style="font-size:30px; padding:20px;display:block;width:100%;text-align:center;overflow:hidden;color:#e00;">Please enable javascipt and reload this page to use this website.</span></noscript>
+<header id="header">
+        <div id="header-t">
+            <div id="header-t-l">
+                <a href="/"><img src="/img/logo.png" alt="{{site.brand}}"></a>
+            </div>
+            <div id="header-t-r">
+                <div id="navbtn" onclick="menux()">
+                    <span id="nb-1"></span>
+                    <span id="nb-2"></span>
+                    <span id="nb-3"></span>
+                </div>
+            </div>
+        </div>
+        <div id="header-b">
+            <nav id="nav">
+                <a href="/" class="navlink {{#if page.home}} active{{/if}}">Home</a>
+                <a href="/discography" class="navlink {{#if page.discography}} active{{/if}}">Discography</a>
+                <a href="/about" class="navlink {{#if page.about}} active{{/if}}">About</a>
+                <a href="/contact" class="navlink {{#if page.contact}} active{{/if}}">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+    $(document).ready(function(){
+        cookx();
+    });
+    </script>
+

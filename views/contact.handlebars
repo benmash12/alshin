@@ -1,0 +1,28 @@
+{{>header}}
+<div id="intro">
+        <div id="jumbo">
+            <div id="jumbo-r">
+                <h1>Contact {{site.brand}} <span>Please scroll down for contact details</span></h1>
+            </div>
+        </div>
+        <div id="i-f">
+            <div id="cheer"></div>
+        </div>
+    </div>
+
+<div class="center-1000xx padten overhide">
+    <div class="wide glassify radfive">
+        {{#is socials.length 0}}
+        <br><br>
+        <p class="panP slim text-center padten grey">Sorry! No contact details added yet. Please check back later.</p>
+        <br><br>
+        {{/is}}
+        {{#isnot socials.length 0}}
+        {{#each socials}}
+        <a rel="nofollow" target="_blank" class="panP linkxx font-14 padfifteen rad-3 silveru-bg light-black wide text-center thick" href="/connect/{{id}}">{{keyword}} on {{name}}</a>
+        {{/each}}
+        {{/isnot}}
+    </div>
+</div>
+
+{{>footer}}

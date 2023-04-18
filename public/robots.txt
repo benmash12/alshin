@@ -1,0 +1,4 @@
+User-agent: * 
+Disallow: /admin
+Disallow: /p/*
+Sitemap: https://alshintk.online/sitemap.xml

@@ -1,0 +1,51 @@
+{{>header}}
+    <div id="intro">
+        <div id="jumbo">
+            <div id="jumbo-r">
+                <h1>Discography <span>Songs | Albums | EPs</span></h1>
+            </div>
+        </div>
+        <div id="i-f">
+            <div id="cheer"></div>
+        </div>
+    </div>
+    <br><br>
+    <div class="center-1000 padten overhide">
+        <div class="wide glassify padten radfive">
+            <div id="searchbox">
+                <input id="searcc" placeholder="search title, genre, tags, artist" class="radten" type="text">
+                <button onclick="main_search()"><i class="fa fa-search"></i></button>
+                <button onclick="refresh_page()"><i class="fa fa-refresh"></i></button>
+            </div>
+            {{#is songs.length 0}}
+			<br>
+			<p class="panP slim text-center grey">Sorry! No projects added yet. Please check back later.</p>
+			<br><br>
+			{{/is}}
+            {{#isnot products.length 0}}
+            <div id="sons">
+            {{#each songs}}
+                <div class="son rad-3" name="song">
+                    <div name="song cover_art" style="background-image:url('{{cover_art}}')" class="son-l">
+                        <img class="hide" src="{{cover_art}}" alt="{{main_art}} - {{title}}">
+                        {{#preview preview}}{{/preview}}
+                    </div>
+                    <div class="son-r">
+                        <h2 name="title">{{title}}</h2>
+                        <h3 name="artists"><span  class="badge badge-sm badge-default"><i class="fa fa-user"></i> {{main_art}}</span> {{#feature features}}{{/feature}}</h3>
+                        <h4 name="genres and tags">{{#gt genres}}{{/gt}} | {{#gt tags}}{{/gt}}</h4>
+                        <h5 name="release date"><i class="fa fa-calendar"></i> {{#rdate release_date}}{{/rdate}}</h5>
+                        <a name="song link" href="/p/{{id}}">Open</a>
+                    </div>
+                </div>
+            {{/each}}
+            </div>
+            <button id="lmore" onclick="lmore(this)" class="panButton slimy blue-bg radfive light-grey">Load More</button>
+            {{/isnot}}
+        </div>
+    </div>
+
+{{>footer}}
+{{>btt}}
+
+{{>reserved}}
