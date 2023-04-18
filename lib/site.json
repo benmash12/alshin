@@ -6,10 +6,10 @@
 	"mode":"prod",
 	"prod":{
 		"sql":{
-			"host":"us-cdbr-east-05.cleardb.net",
-			"user":"b2edd02f5711dc",
-			"pass":"fd136aa6",
-			"db":"heroku_e178423b7848e26"
+			"host":"A",
+			"user":"A",
+			"pass":"A",
+			"db":"A"
 		},
 		"addr":"https://alshintk.online"
 	},
@@ -34,16 +34,16 @@
 	"appleFavicon":"/favicon.ico",
 	"themeColor":"#101010",
 	"keywords":"artist, producer, alshin the kid",
-	"phpServer":"https://salty-bastion-91179.herokuapp.com/",
-	"phpToken":"djhhgf8uhfruerf8yeruee90uefherfcehew8jd9e8huwf89cehwvjvbbibeoibrieihwigcheuvvv9rh9",
+	"phpServer":"A",
+	"phpToken":"A",
 	"email":"alshinthekid@gmail.com",
 	"description":"Alshin The Kid's official website. Artist and Producer",
-	"socketToken":"7327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e73547327daa335abbff466283b44712c2a748da07804a904ccbc3cb2425b3a7e7354",
+	"socketToken":"A",
 	"maintenance":false,
 	"smtp":{
-		"host":"in-v3.mailjet.com",
-		"user":"ba2c8736a0fbb932ba452cefe3a94e9f",
-		"port":587,
-		"pass":"b1400e0f86a678e98ebacb8dfb01c476"
+		"host":"A",
+		"user":"A",
+		"port":0,
+		"pass":"A"
 	}
 }
